@@ -13,7 +13,7 @@ const DB_HOST = "localhost";
 const DB_PORT = "1433";
 const DB_NAME = "SysSoftIntegra";
 const DB_USER = "sa";
-const DB_PASSWORD = "Qz0966lb";
+const DB_PASSWORD = "123456";
 const DB_CHARSET = "charset=utf8";
 
 //Delimitador decimal y millar

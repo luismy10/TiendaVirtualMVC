@@ -1,4 +1,5 @@
 <?php
+namespace SysSoftIntegra\Core;
 
 class Views
 {

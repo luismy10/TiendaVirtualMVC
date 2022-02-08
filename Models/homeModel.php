@@ -1,38 +1,41 @@
 <?php
+namespace SysSoftIntegra\Model;
 
-// use Libraries\Core\Conexion;
+use SysSoftIntegra\Core\Conexion;
+use PDO;
+use Exception;
 
-class homeModel
+class HomeModel extends Conexion
 {
     public function __construct()
     {
-        // parent::__construct();
+        parent::__construct();
     }
 
-    // public function loadEmpresa()
-    // {
-    //     try {
-    //         $cmdEmpresa = $this->getConnection()->prepare("SELECT 
-    //         Telefono,
-    //         Celular,
-    //         Domicilio,
-    //         Email,
-    //         Telefono,
-    //         NombreComercial
-    //         FROM EmpresaTB");
-    //         $cmdEmpresa->execute();
+    public function loadEmpresa()
+    {
+        try {
+            $cmdEmpresa = $this->getConnection()->prepare("SELECT 
+            Telefono,
+            Celular,
+            Domicilio,
+            Email,
+            Telefono,
+            NombreComercial
+            FROM EmpresaTB");
+            $cmdEmpresa->execute();
 
-    //         $protocol = (isset($_SERVER['SERVER_PROTOCOL']) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0');
-    //         header($protocol . ' ' . 200 . ' ' . "OK");
+            $protocol = (isset($_SERVER['SERVER_PROTOCOL']) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0');
+            header($protocol . ' ' . 200 . ' ' . "OK");
 
-    //         return $cmdEmpresa->fetch(PDO::FETCH_OBJ);
-    //     } catch (Exception $ex) {
-    //         $protocol = (isset($_SERVER['SERVER_PROTOCOL']) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0');
-    //         header($protocol . ' ' . 500 . ' ' . "Internal Server Error");
+            return $cmdEmpresa->fetch(PDO::FETCH_OBJ);
+        } catch (Exception $ex) {
+            $protocol = (isset($_SERVER['SERVER_PROTOCOL']) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0');
+            header($protocol . ' ' . 500 . ' ' . "Internal Server Error");
 
-    //         return $ex->getMessage();
-    //     }
-    // }
+            return $ex->getMessage();
+        }
+    }
 
     // public function listTables()
     // {

@@ -2,8 +2,7 @@
 
 $controller = ucwords($controller);
 $controllerFile = "Controllers/" . $controller . ".php";
-if (file_exists($controllerFile)) {
-    dep($controllerFile);
+if (file_exists($controllerFile)) {    
     require_once($controllerFile);
     $controller = new $controller();
 

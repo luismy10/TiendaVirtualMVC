@@ -1,6 +1,6 @@
 <?php
 
-namespace Libraries\Core;
+namespace SysSoftIntegra\Core;
 
 use PDO;
 
